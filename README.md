@@ -86,10 +86,49 @@ app.mount('#app')
 在构建好自己的组件库之后, 可以发布到npm上。
 
 ### package.json中设置
+> `private`字段需要设置为false,否则无法发布到npm上
+>
+>`main`字段是程序的主要入口点, 如果这个package包名为foo, 如果有用户安装并使用require("foo")引入,
+>那么会返回主模块的exports对象
+>
+> `files`字段是一个文件模式数组，描述了当包作为依赖项安装时要包含的条目
+> 下面的包名为snowpika-ui
 ```json
 {
-  "private": false // private需要设置为false,否则无法发布到npm上
+  "name": "snowpika-ui",
+  "private": false
+  "version": "0.0.1",
+  "main": "./dist/snowpika-ui.umd.cjs",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/snowpika-ui.js",
+      "require": "./dist/snowpika-ui.umd.cjs"
+    }
+  },
+  "files": [
+    "dist/*"
+  ],
 }
 ```
+### npm login
+将包发送到npm前, 需要在vscode中登录npm账号
+如果还没npm的账号, 需要提前在官网注册好
+```bash
+# 命令行npm登录账号, 按提示输入用户名、密码等信息
+npm login
+```
+### npm publish
+登录上之后就可以发布包了；
+注意！！如果使用了淘宝的镜像, 需要切换回默认的npmjs镜像
+```bash
+# 设置回默认镜像
+npm config set registry https://registry.npmjs.org/
+```
+如果publish失败，可能是因为包名与npm上已有的包名过于接近, 可以尝试修改包名。
+
+之后发布成功, 就可以从npm上下载并安装属于自己的包了。
+
+
 
 
