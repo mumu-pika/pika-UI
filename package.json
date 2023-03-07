@@ -1,8 +1,18 @@
 {
   "name": "pika-ui",
-  "private": true,
+  "private": false,
   "version": "0.0.1",
+  "main": "./dist/pika-ui.umd.cjs",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/pika-ui.js",
+      "require": "./dist/pika-ui.umd.cjs"
+    }
+  },
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -10,6 +20,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "sass": "^1.58.3",
     "vue": "^3.2.45"
   },
   "devDependencies": {
