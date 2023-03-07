@@ -2,7 +2,7 @@
 
 以Monorepo的方式来构建自己的组件库。
 
-## Setup 构建
+## 1、Setup 构建
 
 ### 起步
 ```bash
@@ -82,7 +82,7 @@ app.use(TUI)
 app.mount('#app')
 ```
 
-## 打包发布
+## 2、打包发布
 在构建好自己的组件库之后, 可以发布到npm上。
 
 ### package.json中设置
