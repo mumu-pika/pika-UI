@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<Props>(), {
   modelValue: '',
 })
 
-const handleSubmit = (e) => {
+const handleSubmit = (e: any) => {
   emit('update:modelValue', e.target.value)
 }
 

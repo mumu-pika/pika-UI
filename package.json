@@ -1,18 +1,19 @@
 {
-  "name": "pika-ui",
+  "name": "snowpika-ui",
   "private": false,
   "version": "0.0.1",
-  "main": "./dist/pika-ui.umd.cjs",
+  "main": "./dist/snowpika-ui.umd.cjs",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/pika-ui.js",
-      "require": "./dist/pika-ui.umd.cjs"
+      "import": "./dist/snowpika-ui.js",
+      "require": "./dist/snowpika-ui.umd.cjs"
     }
   },
   "files": [
     "dist/*"
   ],
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
