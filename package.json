@@ -1,7 +1,8 @@
 {
   "name": "snowpika-ui",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "keywords": ["component", "vue"],
   "main": "./dist/snowpika-ui.umd.cjs",
   "type": "module",
   "exports": {
